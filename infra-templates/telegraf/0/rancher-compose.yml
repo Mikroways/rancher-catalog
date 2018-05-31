@@ -1,0 +1,29 @@
+.catalog:
+  name: "Telegraf collector for rancher hosts"
+  version: 1.0.0
+  description: |
+    Rancher telegraf integration: collect data from each environment
+    host and send it to influx
+  minimum_rancher_version: v1.6.0
+  questions:
+    - variable: "INFLUXDB_HOST"
+      description: "Complete URL of URL Host including protocol and port"
+      label: "InfluxDB URL"
+      required: true
+      type: "string"
+    - variable: "INFLUXDB_NAME"
+      description: "Name of Influx database"
+      label: "InfluxDB name"
+      required: true
+      type: "string"
+    - variable: "INFLUXDB_USER"
+      description: "Influx username"
+      label: "InfluxDB user"
+      required: true
+      type: "string"
+    - variable: "INFLUXDB_PASSWORD"
+      description: "Influx username"
+      label: "InfluxDB user"
+      required: true
+      type: "password"
+

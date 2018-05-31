@@ -1,0 +1,20 @@
+version: '2'
+services:
+  telegraf:
+    image: mikroways/telegraf-rancher:1.0.0
+    environment:
+      INFLUXDB_HOST: '${INFLUXDB_HOST}'
+      INFLUXDB_NAME: '${INFLUXDB_NAME}'
+      INFLUXDB_PASSWORD: '${INFLUXDB_PASSWORD}'
+      INFLUXDB_USER: '${INFLUXDB_USER}'
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock:ro
+    - /sys:/rootfs/sys:ro
+    - /proc:/rootfs/proc:ro
+    - /etc:/rootfs/etc:ro
+    - /:/hostfs:ro
+    - /var/run/utmp:/var/run/utmp:ro
+    labels:
+      io.rancher.scheduler.global: 'true'
+      io.rancher.container.pull_image: always
+
