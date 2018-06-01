@@ -22,8 +22,8 @@
       required: true
       type: "string"
     - variable: "INFLUXDB_PASSWORD"
-      description: "Influx username"
-      label: "InfluxDB user"
+      description: "Influx password"
+      label: "InfluxDB password"
       required: true
       type: "password"
 
