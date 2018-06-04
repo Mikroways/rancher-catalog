@@ -1,0 +1,8 @@
+.catalog:
+  name: "Boot2Docker remove default docker password"
+  version: 1.0.0
+  description: |
+    Boot2Docker boots a new machine with a default user docker and password
+    tcuser that will randomly be changed
+  minimum_rancher_version: v1.6.0
+  questions:

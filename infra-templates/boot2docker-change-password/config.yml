@@ -1,0 +1,8 @@
+name: Boot2Docker remove default docker password
+description: |
+  Boot2Docker boots a new machine with a default user docker and password
+  tcuser that will randomly be changed
+version:  1.0.0
+category: Infrastructure Services
+labels:
+  io.rancher.orchestration.supported: 'cattle'
