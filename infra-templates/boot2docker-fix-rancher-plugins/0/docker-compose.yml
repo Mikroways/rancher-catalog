@@ -1,0 +1,18 @@
+version: '2'
+services:
+  boot2docker-rancher-plugins-fixer:
+    image: alpine:3.8
+    stdin_open: true
+    volumes:
+    - /:/hostfs
+    tty: true
+    command:
+    - ash
+    - -c
+    - '[ -L /hostfs/var/run ] || ( [ -d /hostfs/var/run/docker/plugins/ ] && rm -fr
+      /hostfs/run/docker/plugins && ln -s /var/run/docker/plugins/ /hostfs/run/docker/plugins
+      && echo Fixed)'
+    labels:
+      io.rancher.container.start_once: 'true'
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.global: 'true'
