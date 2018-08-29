@@ -1,0 +1,9 @@
+.catalog:
+  name: "Boot2Docker Fix Rancher Plugins directory error"
+  version: 1.0.1
+  description: |
+    Boot2Docker doesn't symlink /var/run to /run. Then they are different directories.
+    Rancher agent assumes docker plugins are in /var/run/docker/plugins, but boot2docker looks for them
+    at /run/docker/plugins, but as they are different within boot2docker, it doesn't work
+  minimum_rancher_version: v1.6.0
+  questions:
