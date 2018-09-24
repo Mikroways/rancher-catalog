@@ -1,0 +1,19 @@
+version: '2'
+services:
+  rancher-logspout:
+    image: mikroways/logspout:1.0.0
+    stdin_open: true
+    environment:
+      ALLOW_TTY: '${ALLOW_TTY}'
+      LOGSPOUT: 'ignore'
+      SYSLOG_TAG: '${SYSLOG_TAG}'
+      SYSLOG_FORMAT: '${SYSLOG_FORMAT}'
+      ROUTE_URIS: '${ROUTE_URIS}'
+      EXLUDE_LABEL: '${EXCLUDE_LABEL}'
+      RAW_FORMAT: '${RAW_FORMAT}'
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.global: 'true'

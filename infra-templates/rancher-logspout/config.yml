@@ -1,0 +1,7 @@
+name: Rancher logspout 
+description: |
+  Log router for Docker containers
+version:  1.0.0
+category: Infrastructure Services
+labels:
+  io.rancher.orchestration.supported: 'cattle'

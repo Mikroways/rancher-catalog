@@ -1,0 +1,41 @@
+.catalog:
+  name: "Rancher logspout"
+  version: 1.0.0
+  description: |
+    Log router for Docker containers
+  minimum_rancher_version: v1.6.0
+  questions:
+    - variable: "ALLOW_TTY"
+      description: "Include logs from containers started with -t or --tty (i.e. Allocate a pseudo-TTY)"
+      label: "Logspout ALLOW_TTY"
+      required: true
+      type: "boolean"
+    - variable: "SYSLOG_TAG"
+      description: "Edit SYSLOG_TAG, default: {{.ContainerName}}+route.Options['append_tag']"
+      label: "Syslog TAG"
+      required: true
+      type: "string"
+    - variable: "SYSLOG_FORMAT"
+      description: "Syslog format to emit, default rfc5424. Recommend docker-mw"
+      label: "Syslog format"
+      required: true
+      type: "enum"
+      options:
+        - "rfc5424"
+        - "rfc3164"
+        - "docker-mw" 
+    - variable: "ROUTE_URIS"
+      description: "Specify routes to send the logs"
+      label: "Syslog URIs"
+      required: true
+      type: "string"
+    - variable: "EXCLUDE_LABEL"
+      description: "Exclude logs with a given label"
+      label: "Exclude label"
+      required: "false"
+      type: "string"
+    - variable: "RAW_FORMAT"
+      description: "Log format for the raw adapter, default: {{ .Data }}"
+      label: "Raw format"
+      required: "false"
+      type: "string"
