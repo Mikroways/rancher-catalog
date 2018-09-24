@@ -27,10 +27,10 @@
     - variable: "EXCLUDE_LABEL"
       description: "Exclude logs with a given label"
       label: "Exclude label"
-      required: "false"
+      required: false
       type: "string"
     - variable: "RAW_FORMAT"
       description: "Log format for the raw adapter, default: {{ .Data }}"
       label: "Raw format"
-      required: "false"
+      required: false
       type: "string"
