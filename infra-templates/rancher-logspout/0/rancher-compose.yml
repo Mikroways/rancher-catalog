@@ -5,14 +5,6 @@
     Log router for Docker containers
   minimum_rancher_version: v1.6.0
   questions:
-    - variable: "ALLOW_TTY"
-      description: "Include logs from containers started with -t or --tty (i.e. Allocate a pseudo-TTY)"
-      label: "Logspout ALLOW_TTY"
-      required: "true"
-      type: "enum"
-      options:
-        - "true"
-        - "false"
     - variable: "SYSLOG_TAG"
       description: "Edit SYSLOG_TAG, default: {{.ContainerName}}+route.Options['append_tag']"
       label: "Syslog TAG"

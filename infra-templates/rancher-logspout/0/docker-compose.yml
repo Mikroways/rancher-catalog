@@ -4,7 +4,7 @@ services:
     image: mikroways/logspout:1.0.0
     stdin_open: true
     environment:
-      ALLOW_TTY: '${ALLOW_TTY}'
+      ALLOW_TTY: 'true'
       LOGSPOUT: 'ignore'
       SYSLOG_TAG: '${SYSLOG_TAG}'
       SYSLOG_FORMAT: '${SYSLOG_FORMAT}'
