@@ -8,7 +8,6 @@
     - variable: "ALLOW_TTY"
       description: "Include logs from containers started with -t or --tty (i.e. Allocate a pseudo-TTY)"
       label: "Logspout ALLOW_TTY"
-      required: true
       type: "boolean"
     - variable: "SYSLOG_TAG"
       description: "Edit SYSLOG_TAG, default: {{.ContainerName}}+route.Options['append_tag']"
