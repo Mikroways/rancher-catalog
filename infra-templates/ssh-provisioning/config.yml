@@ -1,0 +1,7 @@
+name: Rancher ssh provisioning
+description: |
+      Container that adds users to the docker host and adds public keys that will allow you to connect to this host with this user. The public keys are downloaded using a URL.
+version:  1.0.0
+category: Infrastructure Services
+labels:
+  io.rancher.orchestration.supported: 'cattle'

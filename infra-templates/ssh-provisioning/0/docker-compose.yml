@@ -1,0 +1,16 @@
+version: '2'
+services:
+  ssh-provisioning:
+    image: mikroways/ssh-provisioning:1.0.0
+    stdin_open: true
+    environment:
+      SSH_USER: '${SSH_USER}'
+      SSH_URL_KEYS: '${SSH_URL_KEYS}'
+      SSH_USER_GROUP: '${SSH_USER_GROUP}'
+    volumes:
+    - /etc:/etc
+    - /home:/home
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.global: 'true'

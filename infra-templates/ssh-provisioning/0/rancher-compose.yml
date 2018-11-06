@@ -1,0 +1,22 @@
+.catalog:
+  name: "Rancher ssh provisioning"
+  version: 1.0.0
+  description: |
+    Container that adds users to the docker host and adds public keys that will allow you to connect to this host with this user. The public keys are downloaded using a URL.
+  minimum_rancher_version: v1.6.0
+  questions:
+    - variable: "SSH_USER"
+      description: "New or existing user to which the keys downloaded from SSH_URL_KEYS will be added"
+      label: "Ssh User"
+      required: true
+      type: "string"
+    - variable: "SSH_URL_KEYS"
+      description: "URL from where the public keys will be downloaded"
+      label: "Ssh URL keys"
+      required: true
+      type: "string"
+    - variable: "SSH_USER_GROUP"
+      description: "Allows you to add the SSH_USER user in an existing group of the system"
+      label: "Ssh user group"
+      required: false
+      type: "string"
