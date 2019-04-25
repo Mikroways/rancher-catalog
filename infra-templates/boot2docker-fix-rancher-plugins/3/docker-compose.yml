@@ -1,0 +1,15 @@
+version: '2'
+services:
+  boot2docker-rancher-plugins-fixer:
+    image: alpine:3.8
+    stdin_open: true
+    volumes:
+    - /:/hostfs
+    tty: true
+    command:
+    - ash
+    - -c
+    - ( ( [ -f /hostfs/etc/os-release ] && grep -q ID=boot2docker /hostfs/etc/os-release && ( [ -L /hostfs/var/run ] || (( [ -d /hostfs/var/run/docker/plugins/ ] || mkdir -p /hostfs/var/run/docker/plugins ) && rm -fr /hostfs/run/docker/plugins && ln -s /var/run/docker/plugins/ /hostfs/run/docker/plugins && echo Fixed))) || echo "Fix not needed" ) && tail -f /dev/null
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.global: 'true'
